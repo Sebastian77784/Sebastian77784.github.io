@@ -92,7 +92,7 @@ main {
     height: 400px;
     display: flex ;
 }
-.Z> section.M >article{
+.Z>.M >article{
     background-color: #fff;
     padding: 5px;
     margin: 10px;
@@ -101,6 +101,14 @@ main {
     width: 30%; /* Se ajusta automáticamente en pantallas grandes */
     max-width: 400px; /* Limita el tamaño máximo de cada tarjeta */
     flex: 1 1 200px; /* Permite que los artículos sean flexibles */
+}
+.A>.platillos>.H>article> img{
+    width: 360px;
+    height: 331px;
+}
+.A>.platillos>.Z>.M>article> img{
+    width: 360px;
+    height: 260px;
 }
 
 
