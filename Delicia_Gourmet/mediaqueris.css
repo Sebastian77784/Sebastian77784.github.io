@@ -11,7 +11,7 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
-    
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 /* Encabezado y Pie de Página */
@@ -20,7 +20,7 @@ header, footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
-    
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 footer {
@@ -28,22 +28,24 @@ footer {
 }
 
 /* Navegación */
-nav >ul {
+nav > ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    font-family: "Roboto Condensed", sans-serif;
 }
 
-nav >ul> li {
+nav > ul > li {
     margin: 0 15px;
 }
 
-nav> ul> li> a {
+nav > ul > li > a {
     color: #fff;
     text-decoration: none;
+    font-family: "Roboto Condensed", sans-serif;
 }
 
 /* Contenido Principal */
@@ -56,25 +58,44 @@ main {
 .platillos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    
+    justify-content: space-between; /* Espacio uniforme entre artículos */
 }
 
-.platillos >article {
+.platillos > article {
     background-color: #fff;
     padding: 10px;
     margin: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    max-width: 400px;
-    flex: 1 1 200px;
-    
+    flex: 0 1 calc(33.333% - 20px); /* Cada artículo ocupa 1/3 del ancho menos márgenes */
+    max-width: 400px; /* Limitar el tamaño máximo */
 }
 
-.platillos> img {
+.platillos > article img {
     max-width: 100%;
     border-radius: 5px;
+}
+
+/* Estructuras Adicionales */
+.A, .Z {
+    width: 100%;
+    height: 100%;
+}
+
+.platillos > .H, .Z > .M {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Imágenes Específicas */
+.A > .platillos > .H > article > img {
+    width: 360px;
+    height: 331px;
+}
+
+.Z > .M > article > img {
+    width: 360px;
+    height: 260px;
 }
 
 /* Formulario */
@@ -87,12 +108,12 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-form> label {
+form > label {
     display: block;
     margin: 10px 0 5px;
 }
 
-form> input, form> textarea {
+form > input, form > textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -100,7 +121,7 @@ form> input, form> textarea {
     border-radius: 3px;
 }
 
-form button {
+form > button {
     width: 100%;
     padding: 10px;
     background-color: #c0392b;
@@ -111,7 +132,7 @@ form button {
     transition: background-color 0.3s;
 }
 
-form> button:hover {
+form > button:hover {
     background-color: #e74c3c; /* Rojo más claro */
 }
 
@@ -120,15 +141,14 @@ form> button:hover {
     body {
         width: 100%;
         height: 100%;
-        
     }
 
     .platillos {
-        flex-direction: column;
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
         align-items: center;
     }
 
-    nav> ul> li {
+    nav > ul > li {
         margin: 10px;
     }
 
@@ -136,18 +156,17 @@ form> button:hover {
         padding: 20px 0;
     }
 
-    .platillos> article {
-        width: 80%;
+    .platillos > article {
+        width: 80%; /* Ancho del 80% en pantallas pequeñas */
     }
 
-    .platillos> article> img {
+    .platillos > article > img {
         width: 200px;
         height: 200px;
         transition: 0.4s ease-in all;
-        
     }
 
-    .platillos> article> img:hover {
+    .platillos > article > img:hover {
         transform: scale(1.2);
     }
 }
@@ -157,13 +176,13 @@ form> button:hover {
         flex-wrap: wrap;
     }
 
-    .platillos> article {
-        width: 45%;
+    .platillos > article {
+        width: 45%; /* Ocupa aproximadamente la mitad del contenedor en tabletas */
     }
 }
 
 /* Bordes para Artículos */
-main> .platillos> .H> article,
-main >.platillos> .M> article {
+main > .platillos > .H > article,
+main > .platillos > .M > article {
     border: 2px solid black;
 }

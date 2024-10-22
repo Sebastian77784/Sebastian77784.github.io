@@ -133,7 +133,7 @@ form >label {
     margin: 10px 0 5px;
 }
 
-form input, form textarea {
+form> input, form> textarea {
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -151,7 +151,7 @@ form >button {
     cursor: pointer;
 }
 
-form button:hover {
+form >button:hover {
     background-color: #e74c3c; /* Rojo más claro */
 }
 
