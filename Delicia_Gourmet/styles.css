@@ -158,6 +158,7 @@ form button:hover {
     .comidas-destacadas {
         flex-direction: column; /* Cambia el diseño a columna para pantallas más pequeñas */
         align-items: center; /* Centra los artículos */
+        overflow: hidden;
     }
 
     nav> ul >li {
@@ -170,6 +171,14 @@ form button:hover {
 
     .comidas-destacadas >article {
         width: 80%; /* Se ajusta para que ocupe el 80% del ancho en pantallas más pequeñas */
+    }
+    .comidas-destacadas >article>img{
+        width: 200px;
+        height: 200px;
+        transition: 0.4S ease-in all;
+    }
+    .comidas-destacadas >article>img:hover{
+        transform: scale(1.2)
     }
 }
 
