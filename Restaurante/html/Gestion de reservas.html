@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Reservas - Delicias Gourmet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/administrador.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark fw-semibold" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="administrador.html">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Gestion de menu.html">Gestionar Menú</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Gestion de reservas.html">Gestionar Reservas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Gestion de usuario.html">Gestionar Usuarios</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-4">
+                <h1 class="my-4">Gestionar Reservas</h1>
+
+                <!-- Botón Añadir Reserva -->
+                <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addReservationModal">Añadir Reserva</button>
+
+                <!-- Tabla de Reservas -->
+                <table class="table" id="reservationsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Fecha y Hora</th>
+                            <th>Personas</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-id="1">
+                            <td>1</td>
+                            <td>Ana López</td>
+                            <td>2024-11-20 19:00</td>
+                            <td>4</td>
+                            <td>
+                                <button class="btn btn-warning" onclick="openEditModal(1)">Editar</button>
+                                <button class="btn btn-danger" onclick="openDeleteModal(1)">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr data-id="2">
+                            <td>2</td>
+                            <td>Pedro Gómez</td>
+                            <td>2024-11-21 20:00</td>
+                            <td>2</td>
+                            <td>
+                                <button class="btn btn-warning" onclick="openEditModal(2)">Editar</button>
+                                <button class="btn btn-danger" onclick="openDeleteModal(2)">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal para añadir reserva -->
+    <div class="modal fade" id="addReservationModal" tabindex="-1" aria-labelledby="addReservationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addReservationModalLabel">Añadir Reserva</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addReservationForm">
+                        <div class="mb-3">
+                            <label for="addCustomerName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="addCustomerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addReservationDate" class="form-label">Fecha y Hora</label>
+                            <input type="datetime-local" class="form-control" id="addReservationDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="addNumPeople" class="form-label">Personas</label>
+                            <input type="number" class="form-control" id="addNumPeople" required>
+                        </div>
+                        <button type="submit" class="btn btn-success">Añadir</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para editar reserva -->
+    <div class="modal fade" id="editReservationModal" tabindex="-1" aria-labelledby="editReservationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editReservationModalLabel">Editar Reserva</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="editReservationForm">
+                        <div class="mb-3">
+                            <label for="editCustomerName" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="editCustomerName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editReservationDate" class="form-label">Fecha y Hora</label>
+                            <input type="datetime-local" class="form-control" id="editReservationDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editNumPeople" class="form-label">Personas</label>
+                            <input type="number" class="form-control" id="editNumPeople" required>
+                        </div>
+                        <button type="submit" class="btn btn-warning">Guardar Cambios</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/gestionarReservas.js"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FFF4E6; /* Fondo claro, cálido y acogedor */
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #FF9F00; /* Naranja cálido suave */
+    color: #fff;
+}
+
+.navbar .nav-link {
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar .nav-link:hover {
+    color: #ffe57f; /* Amarillo suave para hover */
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+/* Sección de títulos */
+h2, h3 {
+    color: #D15B00; /* Rojo cálido que llama la atención */
+}
+
+/* Botones */
+.btn-primary {
+    background-color: #FF7F32; /* Naranja medio, que es atractivo pero no agresivo */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #FF6F1F; /* Cambio a un tono un poco más oscuro */
+}
+
+/* Tarjetas */
+.card {
+    border: none;
+    background-color: #FFEDD5; /* Fondo suave, cálido y elegante */
+    border-radius: 10px;
+}
+
+.card-title {
+    color: #D15B00;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* Formularios */
+.form-label {
+    color: #D15B00; /* Tono cálido de texto para contrastar bien */
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #FFB74D; /* Naranja claro para los bordes */
+}
+
+.form-control:focus {
+    border-color: #FF7F32;
+    box-shadow: 0 0 5px rgba(255, 127, 50, 0.5);
+}
+
+/* Footer */
+footer {
+    background-color: #FFECB3; /* Fondo amarillo cálido y suave */
+    color: #5D4037; /* Color marrón suave que complementa bien el fondo */
+}
+
+/* Sección de mapa */
+#mapa {
+    border: 2px solid #FF9F00;
+    height: 300px; /* Para que se vea bien el mapa */
+}
+
+/* Estadísticas */
+#estadisticas {
+    background-color: #FFCC80;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+/* Elementos del Dashboard */
+.card-body {
+    padding: 30px;
+    background-color: #FFFAF0; /* Fondo cálido claro para las tarjetas */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card .card-title {
+    color: #FF5722; /* Tono rojo suave */
+}
+
+.card .card-text {
+    color: #757575; /* Gris suave para texto general */
+}
+
+/* Estilos del header */
+header {
+    background-color: #FF5722; /* Naranja suave */
+    color: #fff;
+}
+
+/* Hover en los links del menú */
+.navbar-nav .nav-item .nav-link:hover {
+    color: #FF9800; /* Naranja que se resalta */
+}
