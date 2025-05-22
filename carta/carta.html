@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Mi Amor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #2e0854, #00cfff);
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .carta {
+      max-width: 700px;
+      margin: auto;
+      background: rgba(50, 0, 80, 0.85);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 0 20px rgba(0, 207, 255, 0.7);
+      backdrop-filter: blur(8px);
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .carta h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 50px;
+      margin-bottom: 10px;
+      color: #a77aff;
+    }
+
+    .carta p {
+      font-size: 20px;
+      line-height: 1.6;
+      margin: 20px 0;
+      color: #88ccff;
+    }
+
+    .corazon {
+      font-size: 50px;
+      color: #00e5ff;
+      animation: beat 1s infinite;
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .firma {
+      margin-top: 30px;
+      font-style: italic;
+      font-size: 18px;
+      color: #a3d9ff;
+    }
+
+    .maquina-escribir {
+      white-space: pre-wrap;
+      text-align: left;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+    <source src="/musica/muscia.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+  <div class="carta">
+    <div class="corazon">❤️</div>
+    <h1>Para ti, mi amor</h1>
+    <p class="maquina-escribir" id="mensaje"></p>
+    <p class="firma">Con todo mi amor,<br>La persona que mas te ama</p>
+  </div>
+  <script>
+    const mensaje = `Hola amor,
+Sé que no siempre fui el hombre que esperabas,
+pero tú has sido todo lo que siempre soñé.
+A veces siento que no merezco tanto,
+porque contigo encontré paz, amor y fuerza.
+No siempre sé cómo decirlo,
+pero te amo con todo lo que soy.
+Gracias por tu paciencia y tu amor tan real.
+Prometo seguir creciendo para darte lo que mereces.
+Te amo más de lo que las palabras logran decir.`;
+    let i = 0;
+    const velocidad = 35;
+    const contenedor = document.getElementById("mensaje");
+
+    function escribir() {
+      if (i < mensaje.length) {
+        contenedor.innerHTML += mensaje.charAt(i);
+        i++;
+        setTimeout(escribir, velocidad);
+      }
+    }
+    escribir();
+  </script>
+</body>
+</html>
