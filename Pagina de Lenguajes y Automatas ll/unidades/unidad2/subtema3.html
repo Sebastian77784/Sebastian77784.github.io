@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Esquema de generación - Unidad 1</title>
+  <link rel="stylesheet" href="../img_sub/styles.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+
+      <h1><strong>2.3 Esquema de generación.</strong></h1>
+
+      <p>Un esquema de generación es una extensión de una gramática libre de contexto que incorpora acciones semánticas destinadas a producir código intermedio o final durante el análisis sintáctico de un compilador.
+        Estas acciones se insertan como bloques de código (normalmente entre llaves { }) dentro de las producciones gramaticales.</p>
+
+      <p><strong>Estructura general:</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/14.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+      <ul>
+        <li>Las acciones semánticas se ejecutan cuando la producción es reconocida.</li>
+        <li>Se colocan para definir cuándo se genera cierto código intermedio o resultado computacional.</li>
+        <li>Se utilizan en analizadores sintácticos dirigidos por la sintaxis (LL o LR).</li>
+      </ul>
+        <h2>2.3.1 variables y constantes:</h2>
+      <p><strong>Variables:</strong></p>
+      <ul>
+        <li>Representan posiciones de memoria que pueden cambiar durante la ejecución.</li>
+        <li>En esquemas de generación, se traducen en instrucciones para reservar espacio, cargar valores o guardar resultados.</li>
+      </ul>
+      <p><strong>Ejemplo</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/15.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+      <p><strong>Constantes:</strong></p>
+      <ul>
+        <li>Son valores fijos definidos explícitamente (ej. 5, 'a', true).</li>
+        <li>Se traducen en instrucciones de carga inmediata o uso directo.</li>
+      </ul>
+      <p><strong>Ejemplo</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/16.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+
+      <h2>2.3.2 Expresiones</h2>
+      <ul>
+        <li>Instrucciones que realizan operaciones aritméticas, lógicas o relacionales.</li>
+        <li>Se traducen evaluando operandos y aplicando la operación correspondiente.</li>
+      </ul>
+      <p><strong>Ejemplo</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/17.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+      <ul><li>El código generado podría ser:</li></ul>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/18.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+
+      <h2>2.3.3 Instrucción de Asignación</h2>
+      <ul><li>Instrucciones donde se asigna el resultado de una expresión a una variable.</li></ul>
+      <p><strong>Ejemplo</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/19.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+
+      <p><strong>Traducción típica</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/20.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      <li>Esto representa: X = A + B</li>
+    </div>
+
+    <h2>2.3.4 Instrucciones de Control</h2>
+    <ul>
+        <li>Instrucciones condicionales o repetitivas: if, while, for, etc.</li>
+        <li>Se requiere generar saltos condicionales e instrucciones de flujo.</li>
+    </ul>
+    <p><strong>Ejemplo</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/21.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+
+      <h2>2.3.5 Funciones</h2>
+      <ul>
+        <li>Son bloques de código reutilizables.</li>
+        <li>En esquemas de generación, implican:(Definición (entrada), Llamada y Retorno de valor)</li>
+      </ul>
+      <p><strong>Ejemplo</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/22.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+      <p><strong>Llamada</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/23.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+      <h2>2.3.6 Estructuras</h2>
+      <ul>
+        <li>Agrupan múltiples variables (como registros o structs).</li>
+        <li>La generación de código considera el acceso a campos internos.</li>
+      </ul>
+      <p><strong>Ejemplo</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/24.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      <li>En memoria, las estructuras suelen representarse con desplazamientos.</li>
+    </div>
+
+        
+        
+      <a href="../../index.html" class="back-button">← Volver al índice</a>
+    </div>
+  </div>
+</body>
+</html>

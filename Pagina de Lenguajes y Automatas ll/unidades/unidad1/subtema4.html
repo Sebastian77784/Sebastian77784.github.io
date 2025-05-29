@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pila semántica de un analisador sintáctico - Unidad 1</title>
+  <link rel="stylesheet" href="../img_sub/styles.css" />
+</head>
+
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>1.4 Pila semántica de un analisador sintáctico</h1>
+
+      <p>
+        La pila semántica es una estructura de datos auxiliar que se utiliza durante el análisis sintáctico
+        (normalmente descendente o ascendente) para gestionar y aplicar acciones semánticas asociadas a las
+        producciones de una gramática.
+      </p>
+
+      <p><strong>¿Para qué sirve?</strong></p>
+      <ul>
+        <li>Almacena información semántica (por ejemplo: tipos, valores, atributos, referencias a símbolos).</li>
+        <li>Ayuda a construir árboles de sintaxis abstracta (AST).</li>
+        <li>Se utiliza en conjunto con la tabla de símbolos y el árbol sintáctico para realizar el análisis semántico.
+        </li>
+        <li>Sirve para evaluar expresiones, generar código intermedio, o verificar tipos, entre otras tareas.</li>
+      </ul>
+
+
+
+      <P><strong>¿Cómo se usa?</strong></P>
+      <p>
+        Cuando el analizador sintáctico (como un parser LR o LL) reduce una producción de la gramática, se ejecuta una
+        acción semántica asociada.
+      </p>
+      <P><strong>Ejemplo:</strong></P>
+      <p>
+        Supongamos una gramática con la producción:
+      </p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="../unidad1/imagenes/2.png" alt="Ejemplo de árbol de expresión"
+          style="max-width: 600px; width: 100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+      <p>
+        Cuando el parser reduce usando esa producción, se realiza una acción semántica como:
+      </p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="../unidad1/imagenes/3.png" alt="Ejemplo de árbol de expresión"
+          style="max-width: 600px; width: 100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+      <p>
+        Para ello:
+      </p>
+      <ul>
+          <li>Los valores E1.valor y T.valor ya están en la pila semántica.</li>
+          <li>Se extraen de la pila (pop).</li>
+          <li>Se realiza la operación +.</li>
+          <li>El resultado se vuelve a insertar (push) en la pila.</li>
+        </ul>
+      <p><strong>Contenido típico de la pila semántica</strong></p>
+      <ul>
+        <li>El tipo del símbolo (int, float, bool, etc.)</li>
+        <li>El valor (literal)</li>
+        <li>El nombre del identificador</li>
+        <li>Referencia a un nodo del AST</li>
+        <li>Dirección de memoria (para generación de código)</li>
+      </ul>
+      <a href="../../index.html" class="back-button">← Volver al índice</a>
+    </div>
+  </div>
+</body>
+
+</html>

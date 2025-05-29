@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lenguaje máquina - Unidad 4</title>
+  <link rel="stylesheet" href="../img_sub/styles.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+
+      <h1><strong>4.3 Lenguaje máquina. </strong></h1>
+        <p>La administración de memoria es el proceso mediante el cual un programa (como un compilador o sistema operativo) controla, distribuye y reutiliza la memoria del sistema (RAM) para almacenar variables, instrucciones, estructuras y datos en tiempo de compilación o ejecución.</p>
+
+        <p><strong>Objetivos principales</strong></p>
+        <ul>
+            <li>Asignar memoria a variables, constantes, estructuras, etc.</li>
+            <li>Liberar memoria cuando ya no se necesita (evitar fugas)</li>
+            <li>Maximizar el uso eficiente del espacio disponible</li>
+            <li>Evitar errores como el acceso a memoria no asignada o sobreescritura</li>
+        </ul>
+
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Segmento</strong></th>
+                    <th><strong>Descripción</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Stack (Pila)</strong></td>
+                    <td>Memoria de funciones, variables locales, gestión LIFO</td>
+                </tr>
+                <tr>
+                    <td><strong>Heap (Montón)	</strong></td>
+                    <td>Memoria dinámica: malloc, new, free, delete</td>
+                </tr>
+                <tr>
+                    <td><strong>Código (Text)</strong></td>
+                    <td>Donde se almacenan las instrucciones del programa</td>
+                </tr>
+                <tr>
+                    <td><strong>Datos (Data)</strong></td>
+                    <td>Variables globales, estáticas e inicializadas</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Procesos involucrados</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Procesos</strong></th>
+                    <th><strong>Descripción</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Asignación de memoria</strong></td>
+                    <td>
+                        <li>En tiempo de compilación (variables estáticas)</li>
+                        <li>En tiempo de ejecución (variables dinámicas, funciones)</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Liberación de memoria</strong></td>
+                    <td>
+                        <li>Manual (en C con free())</li>
+                        <li>Automática (recolector de basura en Java, Python)</li>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Gestión del espacio libre</strong></td>
+                    <td>
+                        <li>Agrupar bloques pequeños libres para crear bloques más grandes</li>
+                        <li>Evitar fragmentación (interna y externa)</li>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Métodos comunes de administración</strong></p>
+        <table>
+            <thead>
+                <tr>
+                    <th><strong>Método</strong></th>
+                    <th><strong>Descripción</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Estática</strong></td>
+                    <td>Se decide durante la compilación (rápida, inflexible)</td>
+                </tr>
+                <tr>
+                    <td><strong>Dinámica</strong></td>
+                    <td>Se decide en tiempo de ejecución (flexible, más compleja)</td>
+                </tr>
+                <tr>
+                    <td><strong>Por pila (Stack)	</strong></td>
+                    <td>Usada para funciones y llamadas recursivas</td>
+                </tr>
+                <tr>
+                    <td><strong>Por montón (Heap)	</strong></td>
+                    <td>Usada para estructuras dinámicas (listas, árboles, etc.)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p><strong>Problemas comunes</strong></p>
+        <ul>
+            <li><strong>Fugas de memoria (Memory leaks):</strong> memoria no liberada correctamente.</li>
+            <li><strong>Fragmentación:</strong> pequeñas partes libres no aprovechadas eficientemente.</li>
+            <li><strong>Overflows y underflows:</strong> se escribe fuera del espacio asignado (peligroso).</li>
+            <li><strong>Acceso a punteros colgantes</strong> usar memoria que ya fue liberada.</li>
+        </ul>
+
+
+
+
+      <a href="../../index.html" class="back-button">← Volver al índice</a>
+    </div>
+  </div>
+</body>
+</html>

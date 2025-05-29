@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Tipos de optimización. - Unidad 3</title>
+  <link rel="stylesheet" href="../img_sub/styles.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+
+      <h1><strong>3.1 Tipos de optimización.</strong></h1>
+
+      <p>La optimización del código es una fase del compilador que mejora el rendimiento del programa generado, sin cambiar 
+        su comportamiento. Existen diversas formas de clasificación según el momento en que se aplica o el tipo de mejora 
+        que realiza.</p>
+
+      <h2>3.1.1 Optimización Local</h2>
+      <ul>
+        <li>Se realiza dentro de un solo bloque básico.</li>
+        <li>Un bloque básico es una secuencia de instrucciones sin saltos (excepto al final).</li>
+        <li>Es la forma más simple y rápida de optimización.</li>
+      </ul>
+      <p><strong>Ejemplo</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/25.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      <li>Eliminación de código muerto</li>
+    </div>
+    <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/26.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      <li>Simplificación algebraica</li>
+    </div>
+    
+      
+        <h2>3.1.2 Optimización en Ciclos</h2>
+      <ul>
+        <li>Se enfoca en mejorar el rendimiento de los bucles, ya que son zonas de alta repetición.</li>
+        <li>Una optimización eficaz en bucles puede reducir significativamente el tiempo de ejecución.</li>
+      </ul>
+      <p><strong>Técnicas comunes:</strong></p>
+      <ul><li><strong>Code motion:</strong> Mover cálculos fuera del bucle si no cambian dentro.</li></ul>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/27.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+      <ul><li><strong>Eliminación de fuerza bruta:</strong> Reemplazar multiplicaciones por sumas o desplazamientos.</li></ul>
+      <ul><li><strong>Desenrollado de bucles (loop unrolling):</strong> Duplicar instrucciones para reducir iteraciones.</li></ul>
+      <p><strong>Constantes:</strong></p>
+      
+      <h2>3.1.3 Optimización Global</h2>
+      <ul>
+        <li>Abarca múltiples bloques básicos considerando el flujo de control completo del programa.</li>
+        <li>Es más compleja, pero permite mejoras profundas.</li>
+      </ul>
+      <ul>
+        <li><strong>Propagación de copias:</strong> Reemplazar variables intermedias por su valor original.</li>
+        <li><strong>Eliminación de subexpresiones comunes:</strong></li>
+      </ul>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/28.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+      <ul><li><strong>Renombramiento de variables</strong> para evitar conflictos y mejorar el uso de registros.</li></ul>
+        
+      <h2>3.1.4 Optimización de Mirilla (Peephole Optimization)</h2>
+      <ul>
+        <li>Es una técnica que analiza una ventana pequeña de instrucciones contiguas (una “mirilla”).</li>
+        <li>Busca patrones ineficientes o redundantes y los reemplaza por versiones más eficientes.</li>
+      </ul>
+      <p><strong>Ejemplos</strong></p>
+      <ul><li><strong>Instrucciones redundantes consecutivas:</strong></li></ul>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/29.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+      
+      <ul><li><strong>Instrucción de salto innecesaria:</strong></li></ul>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/30.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+
+      <ul><li><strong>Simplificación de secuencias:</strong></li></ul>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/31.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+        
+      <a href="../../index.html" class="back-button">← Volver al índice</a>
+    </div>
+  </div>
+</body>
+</html>
