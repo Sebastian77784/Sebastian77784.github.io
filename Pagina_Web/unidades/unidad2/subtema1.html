@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notaciones  - Unidad 2</title>
+  <link rel="stylesheet" href="../img_sub/styles.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+
+      <h1>2.1 Notacioness</h1>
+
+      <p>En el estudio de lenguajes formales, gramáticas y autómatas, las notaciones son formas estandarizadas de expresar lenguajes, gramáticas, expresiones regulares, producciones, etc. Estas notaciones permiten describir estructuras lingüísticas de manera precisa, clara y formal.</p>
+
+      <p><strong>¿Para qué sirven las notaciones?</strong></p>
+      <ul>
+        <li>Para describir lenguajes formales de forma rigurosa.</li>
+        <li>Para construir analizadores léxicos y sintácticos.</li>
+        <li>Para validar estructuras gramaticales de lenguajes.</li>
+        <li>Para diseñar autómatas y compiladores.</li>
+        <li>Para probar propiedades de los lenguajes como regularidad, ambigüedad, etc.</li>
+      </ul>
+      <p><strong>¿Qué son las notaciones infija, prefija y postfija?</strong></p>
+        <p>Son formas diferentes de escribir expresiones (por ejemplo, operaciones matemáticas), dependiendo de la posición del operador respecto a los operandos</p>
+        <p><strong>2.1.1 Prefija</strong></p>
+        <ul>
+            <li><strong>Forma:</strong> operador operando1 operando2</li>
+            <li><strong>Ejemplo:</strong> + A B o * + 3 4 5</li>
+        </ul>
+        <p><Strong>Explicación</Strong></p>
+        <p>En esta notación, el operador va antes de los operandos. Se evalúa de derecha a izquierda o usando recursión. Es muy utilizada en árboles sintácticos y algunos lenguajes funcionales</p>
+        <table>
+    <thead>
+      <tr>
+        <th><strong>Ventajas </strong></th>
+        <th><strong>Desventajas</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>No necesita paréntesis si se respetan las reglas.</td>
+        <td>No es tan intuitiva para humanos.</td>
+      </tr>
+      <tr>
+        <td>Fácil de convertir a árbol de sintaxis abstracta (AST).</td>
+        <td>Difícil de leer si no se está acostumbrado.</td>
+      </tr>
+      </tbody>
+      </table>
+
+        <p><strong>Ejemplo</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/11.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+
+      <p><strong>2.1.2 Infija</strong></p>
+        <ul>
+            <li><strong>Forma:</strong> operando1 operador operando2</li>
+            <li><strong>Ejemplo:</strong> A + B o (3 + 4) * 5</li>
+        </ul>
+        <p><Strong>Explicación</Strong></p>
+        <p>Es la forma tradicional que usamos en matemáticas. Los operadores (como +, -, *, /) van entre los operandos. Para operaciones complejas, se utilizan paréntesis para indicar el orden correcto de evaluacion</p>
+        <table>
+    <thead>
+      <tr>
+        <th><strong>Ventajas </strong></th>
+        <th><strong>Desventajas</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Es intuitiva y fácil de leer para los humanos.</td>
+        <td>Ambigua sin paréntesis o reglas de precedencia.</td>
+      </tr>
+      <tr>
+        <td>Compatible directamente con la mayoría de los lenguajes de programación modernos (como C, Java, Python, etc.), ya que la sintaxis de estos lenguajes está basada en notación infija.</td>
+        <td>Requiere mayor complejidad para ser procesada por computadoras.</td>
+      </tr>
+      </tbody>
+      </table>
+
+      <p><strong>2.1.3 Postfija</strong></p>
+        <ul>
+            <li><strong>Forma:</strong> operando1 operando2 operador</li>
+            <li><strong>Ejemplo:</strong> A B + o 3 4 + 5 *</li>
+        </ul>
+        <p><Strong>Explicación</Strong></p>
+        <p>El operador va después de los operandos. Muy utilizada en máquinas de pila, evaluadores simples y algunas calculadoras programables (como las HP antiguas).</p>
+        <table>
+    <thead>
+      <tr>
+        <th><strong>Ventajas </strong></th>
+        <th><strong>Desventajas</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>No necesita paréntesis</td>
+        <td>Poco intuitiva para los humanos, especialmente sin práctica previa.</td>
+      </tr>
+      <tr>
+        <td>Muy eficiente para evaluación con estructuras de pila.</td>
+        <td>Difícil de escribir manualmente expresiones complejas, ya que no hay separadores visuales como paréntesis y se requiere conocer bien el orden.</td>
+      </tr>
+      </tbody>
+      </table>
+
+        <p><strong>Ejemplo</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="./img/12.png" alt="Árbol de Expresión" style="max-width:400px; width:100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+
+      
+      <a href="../../index.html" class="back-button">← Volver al índice</a>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Generación de la tabla de símbolo y tabla de direcciones Unidad 1</title>
+  <link rel="stylesheet" href="../img_sub/styles.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>1.6 Generación de la tabla de símbolo y tabla de direcciones</h1>
+      <p><strong>¿Qué es la tabla de símbolos?</strong></p>
+      <p>
+       La tabla de símbolos es una estructura de datos que almacena información sobre los identificadores del programa fuente, como variables, funciones, constantes, tipos, etc.
+      </p>
+      <ul>
+        <strong>Es una especie de "diccionario" que el compilador usa para:</strong>
+        <li>Verificar que los identificadores estén correctamente declarados.</li>
+        <li>Asociar atributos semánticos (tipo, dirección, alcance).</li>
+        <li>Facilitar la generación de código intermedio y final.</li>
+      </ul>
+
+      <p><strong>¿Qué contiene la tabla de símbolos?</strong></p>
+       <table>
+    <thead>
+      <tr>
+        <th><strong>Campo</strong></th>
+        <th><strong>Descripción</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Nombre</strong></td>
+        <td>Identificador (ej. x, suma)</td>
+      </tr>
+      <tr>
+        <td><strong>Tipo</strong></td>
+        <td>Tipo de dato (ej. int, float, bool)</td>
+      </tr>
+      <tr>
+        <td><strong>Clase</strong></td>
+        <td>Variable, función, constante, parámetro, etc.</td>
+      </tr>
+      <tr>
+        <td><strong>Ámbito</strong></td>
+        <td>Local, global, dentro de función, etc.</td>
+      </tr>
+      <tr>
+        <td><strong>Dirección</strong></td>
+        <td>Dirección relativa o absoluta en memoria</td>
+      </tr>
+      <tr>
+        <td><strong>Tamaño</strong></td>
+        <td>Número de bytes ocupados (importante para arrays o estructuras)</td>
+      </tr>
+      <tr>
+        <td><strong>Otros</strong></td>
+        <td>Valor constante, número de parámetros, tipo de retorno, etc.</td>
+      </tr>
+       </tbody>
+    </table>
+      <p><strong> ¿Cuándo se genera la tabla de símbolos?</strong></p>
+      <ul>
+        Durante el análisis semántico, que viene después del análisis sintáctico.
+        Cada vez que se encuentra una declaración de identificador, el compilador:
+        <li>Extrae el nombre y tipo.</li>
+        <li>Asigna un espacio en memoria (dirección).</li>
+        <li>Inserta una entrada en la tabla de símbolos.</li>
+      </ul>
+      <p><strong>¿Qué es la tabla de direcciones?</strong></p>
+      <ul>La tabla de direcciones (o asignación de direcciones) está relacionada con la tabla de símbolos y almacena:
+        <li>La dirección de memoria (real o relativa) de cada identificador.</li>
+        <li>Las posiciones de memoria que ocuparán variables, constantes, parámetros, etc.</li>
+        <li>Se utiliza en la generación de código intermedio o código objeto.</li>
+      </ul>
+      <p><strong>Diferencia clave entre ambas </strong></p>
+      <table>
+    <thead>
+      <tr>
+        <th><strong>Tabla de Símbolos</strong></th>
+        <th><strong>Tabla de Direcciones </strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Contiene información semántica</td>
+        <td>Contiene ubicación en memoria</td>
+      </tr>
+      <tr>
+        <td>Útil para verificación de tipos, uso</td>
+        <td>Útil para acceder a los datos en código</td>
+      </tr>
+      <tr>
+        <td><strong>Más abstracta</strong></td>
+        <td>Más concreta para generación de código</td>
+      </tr>
+      </tbody>
+  </table>
+
+    <p><strong>Relación entre ambas</strong></p>
+      <p>La tabla de símbolos incluye una columna de dirección → esa información puede usarse para construir la tabla de direcciones o usarse directamente desde allí en la generación de código.</p>
+
+      <p><strong>Ejemplo</strong></p>
+      <p>Supón el siguiente fragmento de código:</p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="../unidad1/imagenes/8.png" alt="Ejemplo de árbol de expresión" style="max-width: 600px; width: 100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+      <p>Tabla de símbolos </p>
+        <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Clase</th>
+        <th>Ámbito</th>
+        <th>Dirección</th>
+        <th>Tamaño</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>a</td>
+        <td>int</td>
+        <td>variable</td>
+        <td>global</td>
+        <td>100</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>b</td>
+        <td>float</td>
+        <td>variable</td>
+        <td>global</td>
+        <td>104</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>suma</td>
+        <td>int</td>
+        <td>funcion</td>
+        <td>global</td>
+        <td>-</td>
+        <td>-</td>
+      </tr>
+      <tr>
+        <td>x</td>
+        <td>int</td>
+        <td>parámetro</td>
+        <td>suma</td>
+        <td>200</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>y</td>
+        <td>int</td>
+        <td>parametro</td>
+        <td>suma</td>
+        <td>204</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>z</td>
+        <td>int</td>
+        <td>variable</td>
+        <td>suma</td>
+        <td>208</td>
+        <td>4</td>
+       </tr>
+    </tbody>
+  </table>
+
+      <ul>
+        Nota: Las direcciones son ejemplos. Puenden ser relativas o absolutas.
+      </ul>
+
+      <a href="../../index.html" class="back-button">← Volver al índice</a>
+    </div>
+  </div>
+</body>
+</html>

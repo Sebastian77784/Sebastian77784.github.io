@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manejo de errores semánticos. Unidad 1</title>
+  <link rel="stylesheet" href="../img_sub/styles.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+      <h1>1.7 Manejo de errores semánticos.</h1>
+      
+      <p><strong>¿Qué es un error semántico?</strong></p>
+      <p>
+       Un error semántico ocurre cuando una sentencia del programa es sintácticamente correcta, pero carece de sentido lógico o viola las reglas del lenguaje desde el punto de vista del significado.
+      </p>
+      <p><strong>Ejemplo</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="../unidad1/imagenes/9.png" alt="Ejemplo de árbol de expresión" style="max-width: 600px; width: 100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+      <p>Error semántico: no se puede asignar una cadena a una variable entera</p>
+
+      <p><strong>Tipos comunes de errores semánticos</strong></p>
+       <table>
+    <thead>
+      <tr>
+        <th><strong>Tipo de error</strong></th>
+        <th><strong>Descripción</strong></th>
+        <th><strong>Ejemplo</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Incompatibilidad de tipos	</strong></td>
+        <td>Se realiza una operación entre tipos de datos incompatibles.</td>
+        <td>int x = "texto";</td>
+      </tr>
+      <tr>
+        <td><strong>Uso de variables no declaradas	</strong></td>
+        <td>Se usa una variable que no ha sido previamente declarada.</td>
+        <td>y = 5; sin declarar y</td>
+      </tr>
+      <tr>
+        <td><strong>Redefinición de variables	</strong></td>
+        <td>Se declara una variable que ya existe en el mismo ámbito.	</td>
+        <td>int a; int a;</td>
+      </tr>
+      <tr>
+        <td><strong>Llamadas a funciones con parámetros incorrectos	</strong></td>
+        <td>Número o tipo de parámetros no coincide con la declaración.	</td>
+        <td>f(1, "texto"); cuando f espera un solo entero</td>
+      </tr>
+      <tr>
+        <td><strong>Modificación de constantes</strong></td>
+        <td>Intento de cambiar una constante o un valor definido como const.	</td>
+        <td>const int PI = 3.14; PI = 4;</td>
+      </tr>
+      <tr>
+        <td><strong>Acceso indebido al ámbito</strong></td>
+        <td>Usar una variable fuera del ámbito donde fue declarada.</td>
+        <td>Usar una variable local fuera de una función</td>
+      </tr>
+      <tr>
+        <td><strong>División por cero</strong></td>
+        <td>En algunos lenguajes se detecta en tiempo de compilación si es evidente</td>
+        <td>int a = 5 / 0;	</td>
+      </tr>
+       </tbody>
+    </table>
+      <p><strong>¿Cómo se detectan los errores semánticos?</strong></p>
+      <ul>
+        <li>Consulta la tabla de símbolos para verificar si una variable ha sido declarada.</li>
+        <li>Verifica la compatibilidad de tipos para las operaciones y asignaciones.</li>
+        <li>Comprueba el ámbito de cada símbolo.</li>
+        <li>Valida el número y tipo de argumentos en llamadas a funciones.</li>
+        <li>Lanza errores o advertencias si detecta alguna violación de reglas semánticas.</li>
+      </ul>
+      <p><strong>Ejemplo de detección (pseudo-proceso)</strong></p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <img src="../unidad1/imagenes/10.png" alt="Ejemplo de árbol de expresión" style="max-width: 600px; width: 100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+      </div>
+      <p><strong>Mensajes de error típicos</strong></p>
+        <ul>
+          <li>Error: variable 'y' no declarada en el ámbito actual.</li>
+          <li>Error: no se puede asignar un valor de tipo 'string' a una variable de tipo 'int'.</li>
+          <li>Error: número de argumentos inválido para la función 'calcular'.</li>
+        </ul>
+
+      <p><strong>¿Cómo se manejan estos errores?</strong></p>
+        <ul>
+          <li>El análisis semántico no solo los detecta, sino que intenta seguir adelante para encontrar más errores en una sola pasada.</li>
+          <li>Los compiladores suelen usar una estrategia de recuperación, como:
+            <ul><li>Omisión de la línea afectada.</li>
+            <li>Suposición por defecto (por ejemplo, asumir un tipo).</li>
+            <li>Inserción de tokens fantasma para seguir el análisis.</li></ul>
+          </li>
+        </ul>
+      <p><strong>Importancia del manejo de errores semánticos</strong></p>
+      <ul>
+        <li>Mejora la calidad del código al detectar errores antes de la ejecución.</li>
+        <li>Ayuda al programador a entender el comportamiento incorrecto del código.</li>
+        <li>Permite al compilador continuar el análisis para mostrar todos los errores posibles, no solo el primero.</li>
+      </ul>
+      <a href="../../index.html" class="back-button">← Volver al índice</a>
+    </div>
+  </div>
+</body>
+</html>

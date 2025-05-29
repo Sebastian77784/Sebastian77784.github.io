@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lenguaje ensamblador - Unidad 4</title>
+  <link rel="stylesheet" href="../img_sub/styles.css" />
+</head>
+<body>
+  <div class="overlay">
+    <div class="container">
+
+      <h1><strong>4.2 Lenguaje ensamblador. </strong></h1>
+      <p>El lenguaje ensamblador (o assembly) es un lenguaje de bajo nivel que proporciona una representación 
+        simbólica de las instrucciones máquina que entiende directamente un procesador. Es específico para cada 
+        arquitectura (por ejemplo, x86, ARM, MIPS) y permite un control directo sobre el hardware.</p>
+
+        <p><strong>Características principales</strong></p>
+        <ul>
+            <li><strong>Traducción directa:</strong> Está muy cerca del lenguaje máquina.</li>
+            <li><strong>Dependiente del hardware</strong> Cada instrucción en ensamblador equivale a una instrucción en código máquina.</li>
+            <li><strong>Bajo nivel:</strong> Cada familia de procesadores tiene su propio conjunto de instrucciones y sintaxis.</li>
+            <li><strong>Control absoluto del flujo y la memoria:</strong> Se puede manipular registros, direcciones, flags, etc.</li>
+            <li><strong>No portátil:</strong> El código ensamblador para una arquitectura no funciona en otra sin modificaciones.</li>
+        </ul>
+
+        <p><strong>¿Por qué es importante en los compiladores?</strong></p>
+        <ul>
+            <li><strong>Traducción final:</strong> Muchos compiladores generan código ensamblador como una etapa intermedia antes de convertirlo a binario.</li>
+            <li><strong>Optimización:</strong> Permite estudiar cómo optimizar el código a nivel de instrucciones y recursos del procesador.</li>
+            <li><strong>Depuración avanzada</strong> Algunos errores difíciles solo pueden analizarse correctamente revisando el ensamblador generado.</li><strong></strong>        
+        </ul>
+        <h2>Estructura básica de un programa en ensamblador</h2>
+        <div style="text-align: center; margin: 2rem 0;">
+        <img src="../unidad4/img/3.png" alt="Ejemplo de árbol de expresión" style="max-width: 600px; width: 100%; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.2);" />
+            <li>Este ejemplo está en ensamblador NASM para sistemas Linux de 32 bits.</li>
+    </div>
+    <table>
+    <thead>
+      <tr>
+        <th><strong>Elemento</strong></th>
+        <th><strong>Descripción</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Instrucción</strong></td>
+        <td>Acción que debe realizar el procesador (mov, add, jmp, etc.)</td>
+      </tr>
+      <tr>
+        <td><strong>Operando</strong></td>
+        <td>Valor sobre el que actúa la instrucción (registro, memoria, constante)</td>
+      </tr>
+      <tr>
+        <td><strong>Registro</strong></td>
+        <td>Almacenamiento rápido interno al CPU (por ejemplo, eax, ebx)</td>
+      </tr>
+      <tr>
+        <td><strong>Etiqueta</strong></td>
+        <td>Marcador para instrucciones o direcciones (por ejemplo, inicio:)</td>
+      </tr>
+      <tr>
+        <td><strong>Directiva</strong></td>
+        <td>Instrucción especial para el ensamblador (por ejemplo, section, global)</td>
+      </tr>
+      </tbody>
+    </table>
+    
+    <table>
+        <thead>
+            <tr>
+                <th><strong>Ventajas</strong></th>
+                <th><strong>Desventajas</strong></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Máximo control sobre el hardware</td>
+                <td>Difícil de aprender y mantener</td>
+            </tr>
+            <tr>
+                <td>Programas altamente optimizados</td>
+                <td>Mayor riesgo de errores complejos</td>
+            </tr>
+            <tr>
+                <td>Comprensión detallada de cómo funciona un procesador</td>
+                <td>Código extenso para tareas simples</td>
+            </tr>
+        </tbody>
+    </table>
+
+      <a href="../../index.html" class="back-button">← Volver al índice</a>
+    </div>
+  </div>
+</body>
+</html>
